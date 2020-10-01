@@ -5,16 +5,16 @@ import java.awt.Graphics;
 
 public class DrawableRect extends Rectangle {
 
-  public DrawableRect(int width, int height){
-    super.setX1(0);
-    super.setX2(width);
-    super.setY1(0);
-    super.setY2(height);
-  }
-
   private Color outColor;
 
+  public DrawableRect(int width, int height, Color outColor){
+    super(width, height);
+    this.outColor = outColor;
+  }
+
+
   public void draw(Graphics g) {
+    g.setColor(outColor);
     g.drawRect(getX1(), getY1(), getX2() - getX1(), getY2() - getY1());
   }
 

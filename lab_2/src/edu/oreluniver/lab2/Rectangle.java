@@ -43,14 +43,11 @@ public class Rectangle {
   }
 
   public Rectangle Union(Rectangle rectangle) {
-    int nx1, ny1,
-        nx2, ny2;
-    nx1 = Math.min(rectangle.getX1(), this.x1);
-    nx2 = Math.max(rectangle.getX2(), this.x2);
-    ny1 = Math.min(rectangle.getY1(), this.y1);
-    ny2 = Math.max(rectangle.getY2(), this.y2);
 
-    return new Rectangle(nx1, ny1, nx2, ny2);
+    return new Rectangle( Math.min(rectangle.getX1(), x1),
+                          Math.min(rectangle.getY1(), y1),
+                          Math.max(rectangle.getX2(), this.x2),
+                          Math.max(rectangle.getY2(), this.y2));
   }
 
   public int getX1() {
